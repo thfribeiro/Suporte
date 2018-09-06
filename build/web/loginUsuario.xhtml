@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <style>
+            #principal{
+                position:absolute;
+                left:50%;
+                top:50%;
+                margin-left:-330px;
+                margin-top:-180px;
+                width: 624px;
+                height: 290px;
+                border: 2px solid #6495ED;
+                padding: 10px;
+                text-align: left;
+                font-family: calibri;
+                font-size: 13px;
+                border-radius: 50px;
+                text-align: center;
+            }
+            #msg1 
+            {
+                float: right;
+                padding-top: 30px;
+                padding-right: 90px;
+                padding-bottom: 12px;
+                font-family: Cambria;
+                font-size: 21px;
+                color: #6495ED;
+                text-align: center;
+            }
+            #msg2 
+            {
+                float: right;
+                padding-left: 20px;
+                padding-bottom: 10px;
+                font-family: calibri;
+                color: #6495ED;
+                font-size: 15px;
+                text-align: right;
+            }
+            #msg3
+            {
+                float: right;
+                padding-left: 20px;
+                padding-right: 50px;
+                padding-top: 10px;
+                font-family: calibri;
+                color: #6495ED;
+                font-size: 15px;
+                text-align: right;
+            }
+        </style>
+        <title>Suporte</title>
+    </h:head>
+    <h:body style="background-image: url(http://blendesign.com.br/bpinformatica/site/wp-content/uploads/2016/07/tech-background-image-1-1.jpg); background-size: 100%; background-repeat: no-repeat;">
+        <div id="principal">
+            <img align="left" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Logo-uenp.png" height="290" width="265"/>
+            <h:form>
+                <p/><br/>
+                <div id="msg1">
+                    Bem-vindo!
+                </div><br/>
+                <div id="msg2">
+                    Identifique-se por favor para utilizar
+                    o sistema.
+                </div><br/>
+                <h:panelGrid  columns="2" style="padding-left: 17%;">
+                    <h:outputLabel value="Login:" for="login" style="padding-bottom: 10px; color: #6495ED;"/>
+                    <p:inputText  id="campoLogin" size="14" value="#{indexControle2.usu.login}" 
+                                  maxlength="25" required="true" style="width:150px; height: 20px; line-height: 15px;" requiredMessage="Nome obrigatório" />
+                    <h:outputLabel value="Senha:" for="senha" style="color: #6495ED;"/>
+                    <p:password feedback="false" size="14"  maxlength="30"
+                                value="#{indexControle2.usu.senha}"
+                                required="true" style="width:150px; height: 20px; line-height: 15px;" requiredMessage="Senha obrigatória" />  
+                </h:panelGrid>
+                <table style="padding-left: 130px">
+                    <th>
+                        <p:commandButton value="Voltar" icon="ui-icon-arrowreturn-1-w" ajax="false" type="button" onclick="window.location.href = 'http://localhost:8084/Suporte/'" styleClass="ui-state-hover"/> 
+                    </th>
+                    <th>
+                        <p:commandButton value="Login" icon="ui-icon-check" ajax="false"
+                                         action="#{indexControle2.autenticar()}" styleClass="ui-state-hover"/> 
+                    </th>
+                </table>
+            </h:form> 
+        </div>
+    </h:body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <f:facet name="first">
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            <title>Suporte</title>
+        </f:facet>
+    </h:head>
+    <h:body style="background-image: url(http://valtinformatica.com.br/www/images/site/slide_2.jpg); background-size: 100%; background-repeat: no-repeat;">
+        <p/>
+        <h:form id="formPrincipal">
+            <p:separator />
+            <div>
+                <img align="left" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Logo-uenp.png" height="130" width="115"/>
+            </div>
+            <p:outputPanel style="width: 100%; text-align: right">
+                <p:commandButton icon="ui-icon-arrowreturn-1-w" value="Logout" type="button" action="#{indexControle2.deslogar()}" />
+                <h3 style="font-family: sans-serif; padding-right: 42%; color: #6495ED">SUPORTE TÉCNICO</h3>
+            </p:outputPanel>
+            <p/>
+            <br/>
+            <br/>
+            <p:separator/>
+            <p/>
+            <br/>
+        </h:form>
+        <h:form>
+            <p:commandButton icon="ui-icon-plus" value="Solicitar Suporte" type="rrowreturn-1-wbutton" onclick="window.location.href = '/Suporte/faces/suporte/novoSuporte.xhtml'" />
+            <p/>
+            <br/> 
+            <p:dataTable id="tabSuportes" emptyMessage="Nenhuma solicitação cadastrada"
+                         var="suportes" value="#{suporteControle.solicitacoes}">
+                <p:column headerText="Erro: ">
+                    <h:outputText value="#{suportes.erro}"/>
+                </p:column>
+                <p:column headerText="Data: ">
+                    <h:outputText value="#{suportes.solicitacao}"/>
+                </p:column>
+                <p:column headerText="Status: ">
+                    <h:outputText value="#{suportes.status.nome}"/>
+                </p:column>
+                <p:column  headerText="Opções">
+                    <table>
+                        <th>
+                        <p:commandButton  icon="ui-icon-trash" value="Excluir"
+                                          actionListener="#{suporteControle.excluirSuporte(suportes)}"
+                                          update="@form">
+                            <p:confirm header="Excluir solicitação"
+                                       message="Tem certeza que deseja excluir esta solicitação?"
+                                       icon="ui-icon-alert"/>
+                        </p:commandButton>
+                        </th>
+                        <th>
+                        <p:commandButton icon="ui-icon-mail-closed" value="E-mail" type="button" onclick="window.location.href = 'mailto:adm@hotmail.com'" /> 
+                        </th>
+                    </table>
+                </p:column>
+            </p:dataTable>
+            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                <p:outputPanel style="width: 100%; text-align:center" layout="block"> 
+                    <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                    <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                </p:outputPanel>
+            </p:confirmDialog>
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <style>
+            #principal{
+                position:absolute;
+                left:50%;
+                top:50%;
+                margin-left:-330px;
+                margin-top:-180px;
+                width: 624px;
+                height: 290px;
+                border: 2px solid #6495ED;
+                padding: 10px;
+                text-align: left;
+                font-family: calibri;
+                font-size: 13px;
+                border-radius: 50px;
+                text-align: center;
+            }
+            #msg1 
+            {
+                float: right;
+                padding-right: 115px;
+                font-family: Cambria;
+                font-size: 21px;
+                color: #6495ED;
+                text-align: center;
+            }
+            #msg2 
+            {
+                float: right;
+                padding-right: 105px;
+                font-family: calibri;
+                color: #6495ED;
+                font-size: 15px;
+                text-align: right;
+            }
+            #msg3
+            {
+                float: right;
+                padding-left: 20px;
+                padding-right: 50px;
+                padding-top: 10px;
+                font-family: calibri;
+                color: #6495ED;
+                font-size: 15px;
+                text-align: right;
+            }
+        </style>
+        <title>Suporte</title>
+    </h:head>
+    <h:body style="background-image: url(http://blendesign.com.br/bpinformatica/site/wp-content/uploads/2016/07/tech-background-image-1-1.jpg); background-size: 100%; background-repeat: no-repeat;">
+        <div id="principal">
+            <img align="left" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Logo-uenp.png" height="290" width="265"/>
+            <p/><br/>
+            <div id="msg1">
+                Bem-vindo!
+            </div>
+            <p/><br/>
+            <div id="msg2">
+                O que deseja fazer?
+            </div><br/>
+            <div style="padding-left: 295px">
+                <h:form>
+                    <p/><br/>
+                    <p:commandButton  value="LOGIN" ajax="false" style="min-width:160px"
+                                      type="button" onclick="window.location.href = '/Suporte/faces/loginUsuario.xhtml'"/>
+                    <p/><br/>
+                    <p:commandButton value="CADASTRO" ajax="false" style="min-width:160px"
+                                     type="button" onclick="window.location.href = '/Suporte/faces/cadastro.xhtml'"/> 
+                    <p/><br/>
+                    <p:commandButton value="ADMINISTRAÇÃO" style="min-width:160px" type="button" onclick="window.location.href = 'http://localhost:8084/Suporte/faces/loginADM.xhtml'" /> 
+                    <p/><br/>
+                </h:form>
+            </div>    
+            <br/>
+        </div>
+    </h:body>
+</html>

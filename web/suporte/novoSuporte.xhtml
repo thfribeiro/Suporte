@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <title>Cadastro</title>
+    </h:head>
+    <h:body style="background-image: url(http://www.inloco.info/images/background.jpg); background-size: 100%; background-repeat: no-repeat;">
+        <p/>
+        <h:form id="formPrincipal">
+            <p:separator />
+            <div>
+                <img align="left" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Logo-uenp.png" height="130" width="115"/>
+            </div>
+            <p:outputPanel style="width: 100%; text-align: right">
+                <h3  style="font-family: sans-serif; padding-right: 45%;padding-top: 30px; color: #6495ED" >NOVO SUPORTE</h3>
+            </p:outputPanel>
+            <p/>
+            <br/>
+            <br/>
+            <br/>
+            <p:separator/>
+            <p/>
+            <br/>
+        </h:form>
+        <div align="center">
+            <h:form>
+                <h:panelGrid columns="2" >
+                    <p:outputLabel style="padding: 10px; color: #6495ED" value="Status: "/>
+                    <p:outputLabel style="padding: 10px; color: #6495ED" value="#{solicitaSuporte.statusNovo.nome}" />
+                    <p:outputLabel style="padding: 10px; color: #6495ED" value="Usuário: "/>
+                    <p:outputLabel style="padding: 10px; color: #6495ED" value="#{solicitaSuporte.usuariologado.nome}" />
+                    <p:outputLabel style="padding: 10px; color: #6495ED" value="Erro: "/>
+                    <p:inputText id="campoErro" value="#{solicitaSuporte.suporte.erro}" 
+                                 maxlength="250" 
+                                 required="true" requiredMessage="Email obrigatório" > 
+                    </p:inputText>
+                    <p:outputLabel style="padding: 10px; color: #6495ED" value="Data solicitação:" />
+                    <p:calendar  id="dataSolicitacao" timeZone="GMT-3" pattern="dd/MM/yyyy"
+                                 value="#{solicitaSuporte.suporte.solicitacao}"
+                                 locale="pt" showOn="button"
+                                 required="true" requiredMessage="DATA é obrigatória">
+                    </p:calendar>
+                </h:panelGrid>
+                <p:outputPanel style="width: 100%; padding-top: 10px;" layout="block">
+                    <p:commandButton style="padding-right: 10px" icon="ui-icon-closethick" value="Cancelar" type="button" onclick="window.location.href = 'http://localhost:8084/Suporte/faces/menuUsuario.xhtml'" />
+                    <p:commandButton icon="ui-icon-check" value="Confirmar" action="#{solicitaSuporte.registraSuporte()}" 
+                                     update="@form"/>                           
+                </p:outputPanel>
+                <p/>
+                <p:messages />
+            </h:form>
+        </div>
+    </h:body>
+</html>

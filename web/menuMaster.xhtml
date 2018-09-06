@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <f:facet name="first">
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            <title>Suporte</title>
+        </f:facet>
+    </h:head>
+    <h:body style="background-image: url(http://valtinformatica.com.br/www/images/site/slide_2.jpg); background-size: 100%; background-repeat: no-repeat;">
+        <p/>
+        <h:form id="formPrincipal">
+            <p:separator />
+            <div>
+                <img align="left" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Logo-uenp.png" height="130" width="115"/>
+            </div>
+            <p:outputPanel style="width: 100%; text-align: right">
+                <p:commandButton icon="ui-icon-arrowreturn-1-w" value="Logout" type="button" action="#{indexControle.deslogar()}" />
+                <h3 style="font-family: sans-serif; padding-right: 42%; color: #6495ED">SUPORTE TÉCNICO</h3>
+            </p:outputPanel>
+            <p/>
+            <br/>
+            <br/>
+            <p:separator/>
+            <p/>
+            <br/>
+        </h:form>
+        <h:form>
+            <p:commandButton icon="ui-icon-star" value="Gerenciar administradores" type="rrowreturn-1-wbutton" onclick="window.location.href = '/Suporte/faces/administrador/admGerenciar.xhtml'" />
+            <p/>
+            <p:commandButton icon="ui-icon-person" value="Gerenciar usuarios" type="rrowreturn-1-wbutton" onclick="window.location.href = '/Suporte/faces/usuarioADM/usuarioGerenciar.xhtml'" />
+            <p/>
+            <p:commandButton icon=" ui-icon-grip-solid-horizontal" value="Gerenciar Solicitações" type="rrowreturn-1-wbutton" onclick="window.location.href = '/Suporte/faces/suporteADM/suporteGerenciar.xhtml'" />
+            <p/>
+        </h:form>
+    </h:body>
+</html>
